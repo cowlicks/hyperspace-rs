@@ -42,7 +42,7 @@ pub async fn run(mut replicator: Replicator, opts: Opts) -> io::Result<()> {
 async fn swarm_config_from_opts(opts: Opts) -> io::Result<Config> {
     let config = Config::default();
     let config = if opts.bootstrap.len() > 0 {
-        config.set_bootstrap_nodes(opts.bootstrap[..].to_vec())
+        config.set_bootstrap_nodes(&opts.bootstrap[..].to_vec())
     } else {
         config
     };

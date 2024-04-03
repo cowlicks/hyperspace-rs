@@ -1,9 +1,10 @@
-use clap::Clap;
+use clap::Parser;
 use std::net::SocketAddr;
 use std::path::PathBuf;
 
 /// Options for the storage daemon
-#[derive(Clap, Debug)]
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
 pub struct Opts {
     /// Set storage path
     ///
@@ -35,7 +36,8 @@ pub struct Opts {
     pub dht: bool,
 
     /// A level of verbosity, and can be used multiple times
-    #[clap(short, long, parse(from_occurrences))]
+    //#[clap(short, long, parse(from_occurrences))] // FIXME maybe
+    #[clap(short, long)]
     pub verbose: i32,
 }
 

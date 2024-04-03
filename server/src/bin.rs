@@ -1,5 +1,5 @@
 use async_std::task;
-use clap::Clap;
+use clap::Parser;
 use hyperspace_server::{listen, run_bootstrap_node, Opts};
 
 fn main() -> anyhow::Result<()> {
