@@ -10,7 +10,7 @@ use async_std::prelude::*;
 use async_std::sync::Arc;
 use async_std::task;
 use async_trait::async_trait;
-use clap::Clap;
+use clap::{Parser, Subcommand};
 use env_logger::Env;
 use futures::io::{AsyncRead, AsyncWrite};
 use futures::stream::{StreamExt, TryStreamExt};
@@ -25,24 +25,25 @@ use hyperspace_client::codegen;
 use hyperspace_client::{RemoteCorestore, RemoteHypercore};
 use hyperspace_common::socket_path;
 
-#[derive(Clap, Debug)]
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
 pub struct Opts {
     /// Hypercore key
-    #[clap(short, long)]
+    #[arg(short, long)]
     pub key: Option<String>,
     /// Hypercore name
-    #[clap(short, long)]
+    #[arg(short, long)]
     pub name: Option<String>,
 
     /// Override socket name to connect to
-    #[clap(short, long)]
+    #[arg(short, long)]
     pub host: Option<String>,
 
-    #[clap(subcommand)]
+    #[command(subcommand)]
     pub command: Command,
 }
 
-#[derive(Clap, Debug)]
+#[derive(Subcommand, Debug)]
 pub enum Command {
     /// Read from a Hypercore
     Read,

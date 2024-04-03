@@ -23,4 +23,4 @@ prost = "0.6.1"
 chashmap = "2.2.2"
 parking_lot = { version = "0.11.0", features = ["send_guard"] }
 hex = "0.4.2"
-clap = "3.0.0-beta.1"
+clap = { version = "4.5.4", features = ["derive"] }
