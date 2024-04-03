@@ -1,5 +1,5 @@
 [workspace]
-members = ["client","server", "common", "corestore", "replicator", "examples/*"]
+members = ["client","server", "common", "corestore", "replicator"]
 
 [patch.crates-io]
 hypercore = { git = "https://github.com/Frando/datrs-hypercore", branch = "hyperspace" }
