@@ -16,7 +16,7 @@ pub struct Opts {
     ///
     /// The actual socket will be created at tmpdir/[host].sock
     /// Defaults to "hyperspace".
-    #[clap(short, long)]
+    #[clap(long)]
     pub host: Option<String>,
 
     /// Address to which Hyperswarm binds

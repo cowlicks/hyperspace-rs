@@ -36,7 +36,7 @@ pub struct Opts {
     pub name: Option<String>,
 
     /// Override socket name to connect to
-    #[arg(short, long)]
+    #[arg(long)]
     pub host: Option<String>,
 
     #[command(subcommand)]
