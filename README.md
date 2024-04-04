@@ -33,18 +33,18 @@ This example starts two `hyperspace-server` instances and runs a hyperswarm DHT 
 cargo run --bin hyperspace-server -- --dht -a 127.0.0.1:3401
 
 # 2. Start server 1
-cargo run --bin hyperspace-server -- -s /tmp/hs1 -h hs1 -b 127.0.0.1:3401
+cargo run --bin hyperspace-server -- -s /tmp/hs1 --host hs1 -b 127.0.0.1:3401
 
 # 3. Start server 2
-cargo run --bin hyperspace-server -- -s /tmp/hs2 -h hs2 -b 127.0.0.1:3401
+cargo run --bin hyperspace-server -- -s /tmp/hs2 --host hs2 -b 127.0.0.1:3401
 
 # 4. Write to a feed on server 1
-cargo run --bin hyperspace-client -- -h hs1 -n afeed write
+cargo run --bin hyperspace-client -- --host hs1 -n afeed write
 # the feed's key will be printed
 # (type something and press enter, it will be appended to the feed)
 
 # 5. Read from the feed from server 2
-cargo run --bin hyperspace-client -- -h hs2 -k KEY_FROM_ABOVE read
+cargo run --bin hyperspace-client -- --host hs2 -k KEY_FROM_ABOVE read
 ```
 
 ### Contributing
