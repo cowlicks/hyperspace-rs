@@ -34,11 +34,6 @@ pub struct Opts {
     /// Run a local bootstrapping dht node
     #[clap(long)]
     pub dht: bool,
-
-    /// A level of verbosity, and can be used multiple times
-    //#[clap(short, long, parse(from_occurrences))] // FIXME maybe
-    #[clap(short, long)]
-    pub verbose: i32,
 }
 
 impl Default for Opts {
@@ -50,7 +45,6 @@ impl Default for Opts {
             bootstrap: vec![],
             port: None,
             dht: false,
-            verbose: 0,
         }
     }
 }
