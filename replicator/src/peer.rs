@@ -73,6 +73,7 @@ pub struct Peer {
 
 #[derive(Debug, Default, Clone)]
 pub struct Stats {
+    #[allow(dead_code)]
     id: RemotePublicKey,
     downloaded_blocks: u64,
     downloaded_bytes: u64,

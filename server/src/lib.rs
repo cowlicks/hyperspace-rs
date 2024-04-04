@@ -17,6 +17,7 @@ const STORAGE_DIR: &str = ".hyperspace-rs";
 #[derive(Clone)]
 pub struct State {
     corestore: Corestore,
+    #[allow(dead_code)]
     replicator: Replicator,
 }
 
