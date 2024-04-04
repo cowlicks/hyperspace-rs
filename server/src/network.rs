@@ -14,7 +14,7 @@ pub async fn run(mut replicator: Replicator, opts: Opts) -> io::Result<()> {
     enum Event {
         Replicator(ReplicatorEvent),
         Swarm(io::Result<HyperswarmStream>),
-    };
+    }
 
     let mut events = replicator_events
         .map(Event::Replicator)
